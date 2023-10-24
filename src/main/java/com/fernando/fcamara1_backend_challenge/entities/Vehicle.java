@@ -10,9 +10,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Vehicle {
+public class Vehicle extends BaseEntity {
     @Column(nullable = false)
     private String brand;
 
@@ -28,4 +27,14 @@ public class Vehicle {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private VehicleType type;
+
+    public Vehicle(Long id, String brand, String model, String color, String plate,
+                   VehicleType type) {
+        super(id);
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.plate = plate;
+        this.type = type;
+    }
 }

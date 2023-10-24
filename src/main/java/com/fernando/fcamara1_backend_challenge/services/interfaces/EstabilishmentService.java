@@ -1,0 +1,8 @@
+package com.fernando.fcamara1_backend_challenge.services.interfaces;
+
+import com.fernando.fcamara1_backend_challenge.dtos.estabilishment.EstabilishmentRequestDTO;
+import com.fernando.fcamara1_backend_challenge.dtos.estabilishment.EstabilishmentResponseDTO;
+
+public interface EstabilishmentService extends CrudService<EstabilishmentRequestDTO, EstabilishmentResponseDTO>{
+
+}

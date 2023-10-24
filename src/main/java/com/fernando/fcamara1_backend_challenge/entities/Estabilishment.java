@@ -1,18 +1,14 @@
 package com.fernando.fcamara1_backend_challenge.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Estabilishment {
+public class Estabilishment extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
 
@@ -34,4 +30,17 @@ public class Estabilishment {
     @OneToMany
     @JoinColumn(name = "vehicle_id")
     private List<Vehicle> vehicles;
+
+    public Estabilishment(Long id, String name, String cnpj, String addrees,
+                          String telephone, Long quantityMotocyclesVacancies,
+                          Long quantityCarsVacancies, List<Vehicle> vehicles) {
+        super(id);
+        this.name = name;
+        this.cnpj = cnpj;
+        this.addrees = addrees;
+        this.telephone = telephone;
+        this.quantityMotocyclesVacancies = quantityMotocyclesVacancies;
+        this.quantityCarsVacancies = quantityCarsVacancies;
+        this.vehicles = vehicles;
+    }
 }
