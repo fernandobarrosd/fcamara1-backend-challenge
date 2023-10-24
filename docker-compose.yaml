@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  mysql:
+    container_name: fcamara1-mysql
+    image: mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fcamara1_db
+    volumes:
+      - db:/var/lib/mysql
+
+
+volumes:
+  db:
